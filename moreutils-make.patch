@@ -1,0 +1,11 @@
+--- moreutils/Makefile~	2010-10-29 22:47:09.000000000 +0300
++++ moreutils/Makefile	2011-05-28 13:21:13.315371896 +0300
+@@ -5,7 +5,7 @@
+ INSTALL_BIN?=install -s
+ PREFIX=/usr
+ 
+-DOCBOOK2XMAN=docbook2x-man
++DOCBOOK2XMAN=docbook2man
+ 
+ all: $(BINS) $(MANS)
+ 

@@ -2,12 +2,12 @@
 # - Subpackage each tool?
 Summary:	A collection of unix tools
 Name:		moreutils
-Version:	0.44
-Release:	0.1
+Version:	0.45
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.tar.gz
-# Source0-md5:	a3fb0b1393c381aae88d8139400c24dc
+# Source0-md5:	b30306cd7312219551b890fbcbf984c4
 Patch0:		%{name}-make.patch
 URL:		http://kitenet.net/~joey/code/moreutils/
 BuildRequires:	docbook-dtd44-sgml

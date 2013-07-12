@@ -1,6 +1,7 @@
 # TODO:
 # - Subpackage each tool?
 Summary:	A collection of unix tools
+Summary(pl.UTF-8):	Zestaw narzędzi uniksowych
 Name:		moreutils
 Version:	0.46
 Release:	1
@@ -9,7 +10,7 @@ Group:		Applications/System
 Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.tar.gz
 # Source0-md5:	658f9cc6b6dcc0b50dcff714e13b22dc
 Patch0:		%{name}-make.patch
-URL:		http://kitenet.net/~joey/code/moreutils/
+URL:		http://joeyh.name/code/moreutils/
 BuildRequires:	docbook-dtd44-sgml
 BuildRequires:	docbook2X
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,6 +33,31 @@ unix was young. Currently it consists of these tools:
  - vidir: edit a directory in your text editor
  - vipe: insert a text editor into a pipe
  - zrun: automatically uncompress arguments to command
+
+%description -l pl.UTF-8
+Zestaw narzędzi uniksowych, o których napisaniu nikt nie pomyślał
+dawno temu, kiedy unix był młody. Obecnie zawiera następujące
+narzędzia:
+
+ - chronic: ciche uruchomienie polecenia, jeśli nie ma błędu
+ - ccombine: łączenie linii z dwóch plików przy użyciu operacji
+   logicznych
+ - ifdata: pobieranie informacji o interfejsie bez analizy wyjścia
+   ifconfiga
+ - isutf8: sprawdzenie, czy lub standardowe wejście jest w UTF-8
+ - ifne: uruchomienie polecenia, jeśli standardowe wejście nie jest
+   puste
+ - lckdo: uruchomienie programu podczas trzymania blokady
+   (przestarzały)
+ - mispipe: potok dwóch poleceń, zwracający status zakończenia
+   pierwszego z nich
+ - parallel: uruchomienie wilu zadań naraz
+ - pee: tee standardowego wejścia do potoków
+ - sponge: przesączenie standardowego wejścia i zapis do pliku
+ - ts: oznaczenie standardowego wejścia znacznikami czasu
+ - vidir: edycja katalogu w edytorze tekstu
+ - vipe: wstawienie edytora tekstu w potok
+ - zrun: automatyczne dekompresja argumentów polecenia
 
 %prep
 %setup -q -n %{name}

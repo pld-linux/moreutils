@@ -52,7 +52,7 @@ narzędzia:
    (przestarzały)
  - mispipe: potok dwóch poleceń, zwracający status zakończenia
    pierwszego z nich
- - parallel: uruchomienie wilu zadań naraz
+ - parallel: uruchomienie wielu zadań naraz
  - pee: tee standardowego wejścia do potoków
  - sponge: przesączenie standardowego wejścia i zapis do pliku
  - ts: oznaczenie standardowego wejścia znacznikami czasu

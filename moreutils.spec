@@ -1,16 +1,18 @@
 Summary:	A collection of unix tools
 Summary(pl.UTF-8):	Zestaw narzędzi uniksowych
 Name:		moreutils
-Version:	0.50
+Version:	0.51
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.tar.gz
-# Source0-md5:	d98df84a188e0e9c58b06c0fcab48f98
+# Source0-md5:	849282ea7e43ed01d34bd81b1d2be283
 Patch0:		%{name}-make.patch
 URL:		http://joeyh.name/code/moreutils/
-BuildRequires:	docbook-dtd44-sgml
-BuildRequires:	docbook2X
+BuildRequires:	docbook-dtd44-xml
+BuildRequires:	docbook-style-xsl
+BuildRequires:	libxml2-progs
+BuildRequires:	libxslt-progs
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,14 +66,10 @@ narzędzia:
 %setup -q -n %{name}
 %patch0 -p1
 
-# adjust paths to PLD
-%{__sed} -i -e 's,"file:///.*docbookx\.dtd","/usr/share/sgml/docbook/xml-dtd-4.4/docbookx.dtd",' *.docbook
-
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -Wall" \
-	DOCBOOK2XMAN=docbook2X2man
+	CFLAGS="%{rpmcflags} -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT

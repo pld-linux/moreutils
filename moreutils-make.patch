@@ -1,11 +1,11 @@
---- moreutils/Makefile~	2010-10-29 22:47:09.000000000 +0300
-+++ moreutils/Makefile	2011-05-28 13:21:13.315371896 +0300
+--- moreutils/Makefile.orig	2013-11-06 03:35:50.000000000 +0100
++++ moreutils/Makefile	2014-03-03 07:37:30.628133713 +0100
 @@ -5,7 +5,7 @@
  INSTALL_BIN?=install -s
- PREFIX=/usr
+ PREFIX?=/usr
  
--DOCBOOK2XMAN=docbook2x-man
-+DOCBOOK2XMAN=docbook2man
+-DOCBOOK2XMAN=xsltproc --param man.authors.section.enabled 0 /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl
++DOCBOOK2XMAN=xsltproc --param man.authors.section.enabled 0 /usr/share/sgml/docbook/xsl-stylesheets/manpages/docbook.xsl
  
  all: $(BINS) $(MANS)
  

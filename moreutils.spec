@@ -1,12 +1,12 @@
 Summary:	A collection of unix tools
 Summary(pl.UTF-8):	Zestaw narzędzi uniksowych
 Name:		moreutils
-Version:	0.51
+Version:	0.54
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.tar.gz
-# Source0-md5:	849282ea7e43ed01d34bd81b1d2be283
+Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.orig.tar.gz
+# Source0-md5:	1ced0ba9ac133cb81bbe2424f60d0a8a
 Patch0:		%{name}-make.patch
 URL:		http://joeyh.name/code/moreutils/
 BuildRequires:	docbook-dtd44-xml
@@ -63,7 +63,7 @@ narzędzia:
  - zrun: automatyczne dekompresja argumentów polecenia
 
 %prep
-%setup -q -n %{name}
+%setup -q
 %patch0 -p1
 
 %build

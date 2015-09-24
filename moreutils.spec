@@ -1,12 +1,12 @@
 Summary:	A collection of unix tools
 Summary(pl.UTF-8):	Zestaw narzędzi uniksowych
 Name:		moreutils
-Version:	0.55
+Version:	0.57
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.orig.tar.gz
-# Source0-md5:	821a791e78d08396e25a3aa380ad083f
+# Source0-md5:	2fd82a15dea059506a6f43ce717dbfad
 Patch0:		%{name}-make.patch
 URL:		http://joeyh.name/code/moreutils/
 BuildRequires:	docbook-dtd44-xml
@@ -28,7 +28,6 @@ unix was young. Currently it consists of these tools:
  - ifne: run a command if the standard input is not empty
  - lckdo: execute a program with a lock held (deprecated)
  - mispipe: pipe two commands, returning the exit status of the first
- - parallel: run multiple jobs at once
  - pee: tee standard input to pipes
  - sponge: soak up standard input and write to a file
  - ts: timestamp standard input
@@ -54,7 +53,6 @@ narzędzia:
    (przestarzały)
  - mispipe: potok dwóch poleceń, zwracający status zakończenia
    pierwszego z nich
- - parallel: uruchomienie wielu zadań naraz
  - pee: tee standardowego wejścia do potoków
  - sponge: przesączenie standardowego wejścia i zapis do pliku
  - ts: oznaczenie standardowego wejścia znacznikami czasu
@@ -78,6 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	INSTALL_BIN=install
 
+# use parallel package instead
+%{__rm} $RPM_BUILD_ROOT%{_bindir}/parallel
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man1/parallel.1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -92,7 +94,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/isutf8
 %attr(755,root,root) %{_bindir}/lckdo
 %attr(755,root,root) %{_bindir}/mispipe
-%attr(755,root,root) %{_bindir}/parallel
 %attr(755,root,root) %{_bindir}/pee
 %attr(755,root,root) %{_bindir}/sponge
 %attr(755,root,root) %{_bindir}/ts
@@ -107,7 +108,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/isutf8.1*
 %{_mandir}/man1/lckdo.1*
 %{_mandir}/man1/mispipe.1*
-%{_mandir}/man1/parallel.1*
 %{_mandir}/man1/pee.1*
 %{_mandir}/man1/sponge.1*
 %{_mandir}/man1/ts.1*

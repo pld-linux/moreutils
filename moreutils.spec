@@ -1,13 +1,12 @@
 Summary:	A collection of unix tools
 Summary(pl.UTF-8):	Zestaw narzędzi uniksowych
 Name:		moreutils
-Version:	0.57
+Version:	0.60
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.orig.tar.gz
-# Source0-md5:	2fd82a15dea059506a6f43ce717dbfad
-Patch0:		%{name}-make.patch
+Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.orig.tar.xz
+# Source0-md5:	cbbef359a67e75581c8d7b0f94decf15
 URL:		http://joeyh.name/code/moreutils/
 BuildRequires:	docbook-dtd44-xml
 BuildRequires:	docbook-style-xsl
@@ -62,12 +61,12 @@ narzędzia:
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -Wall"
+	CFLAGS="%{rpmcppflags} %{rpmcflags} -Wall" \
+	DOCBOOKXSL=%{_datadir}/sgml/docbook/xsl-stylesheets
 
 %install
 rm -rf $RPM_BUILD_ROOT

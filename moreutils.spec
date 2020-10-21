@@ -1,12 +1,12 @@
 Summary:	A collection of unix tools
 Summary(pl.UTF-8):	Zestaw narzędzi uniksowych
 Name:		moreutils
-Version:	0.62
+Version:	0.63
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.orig.tar.xz
-# Source0-md5:	8f083914757e624cc73289016a6f3d87
+# Source0-md5:	b2e1dc2943900f1f07c2e6463e17c2df
 URL:		http://joeyh.name/code/moreutils/
 BuildRequires:	docbook-dtd44-xml
 BuildRequires:	docbook-style-xsl

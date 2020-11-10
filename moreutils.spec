@@ -9,7 +9,7 @@ Source0:	http://ftp.debian.org/debian/pool/main/m/moreutils/%{name}_%{version}.o
 # Source0-md5:	b2e1dc2943900f1f07c2e6463e17c2df
 URL:		http://joeyh.name/code/moreutils/
 BuildRequires:	docbook-dtd44-xml
-BuildRequires:	docbook-style-xsl
+BuildRequires:	docbook-style-xsl-nons
 BuildRequires:	libxml2-progs
 BuildRequires:	libxslt-progs
 BuildRequires:	sed >= 4.0
@@ -68,7 +68,7 @@ narzędzia:
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcppflags} %{rpmcflags} -Wall" \
-	DOCBOOKXSL=%{_datadir}/sgml/docbook/xsl-stylesheets
+	DOCBOOKXSL=%{_datadir}/sgml/docbook/xsl-nons-stylesheets
 
 %install
 rm -rf $RPM_BUILD_ROOT

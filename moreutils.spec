@@ -12,6 +12,7 @@ BuildRequires:	docbook-dtd44-xml
 BuildRequires:	docbook-style-xsl-nons
 BuildRequires:	libxml2-progs
 BuildRequires:	libxslt-progs
+BuildRequires:	perl-tools-pod
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
